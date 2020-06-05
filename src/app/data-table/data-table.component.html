@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>DATA TABLE</h2>
+            
+            <table mat-table [dataSource]="dataLists" matSort class="mat-elevation-z8">
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="index">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> # </th>
+                    <td mat-cell *matCellDef="let element"> {{element.index}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="name.firstName">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.name.firstName}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="address.city">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> City </th>
+                    <td mat-cell *matCellDef="let element"> {{element.address.city}} </td>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="company">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Company </th>
+                    <td mat-cell *matCellDef="let element"> {{element.company}} </td>
+                </ng-container>
+                <!-- Weight Column -->
+                <ng-container matColumnDef="phone">
+                    <th mat-header-cell *matHeaderCellDef> Phone </th>
+                    <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+                </ng-container>
+                <!-- Weight Column -->
+                <ng-container matColumnDef="age">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Age </th>
+                    <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+                </ng-container>
+                <!-- Weight Column -->
+                <ng-container matColumnDef="registered">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+                    <td mat-cell *matCellDef="let element"> {{element.registered | date}} </td>
+                </ng-container>
+
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+
+        </div>
+    </div>
+</div>
