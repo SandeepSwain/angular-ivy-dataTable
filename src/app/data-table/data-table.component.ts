@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit,ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ServiceDataService } from './../service-data.service';
@@ -47,6 +47,6 @@ export class DataTableComponent implements OnInit, AfterViewInit {
       this.dataLists.sort = this.sort;
     });
   }
-}
+
 
 }
